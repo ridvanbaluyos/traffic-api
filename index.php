@@ -30,7 +30,7 @@ $app->group('/v1', function () use ($app) {
         }
 
         $response = json_encode($response);
-        echo $response;
+        echo '{"status":"SUCCESS", "code":"200", "response" : ' . $response . '}';
     });
 });
 $app->run();
