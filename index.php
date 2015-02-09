@@ -12,7 +12,7 @@ $app->get('/', function () {
     echo "Hello world!";
 });
 
-// V1 route group 
+// V1 route group
 $app->group('/v1', function () use ($app) {
     $app->get('/traffic(/:highway(/:segment(/:direction)))', function ($highway = null, $segment = null, $direction = null, $json = false) {
         $trafficData = fetchTrafficData();
