@@ -3,19 +3,19 @@ require 'vendor/autoload.php';
 require 'mmda.php';
 
 $app = new \Slim\Slim(
-	array(
-		'debug' => true,
-	)
+    array(
+        'debug' => true,
+    )
 );
 
 $app->get('/', function () {
-	echo "Hello world!";
+    echo "Hello world!";
 });
 
 // V1 route group
 $app->group('/v1', function () use ($app) {
-	$app->get('/traffic(/:highway(/:segment(/:direction)))', function ($highway = null, $segment = null, $direction = null, $json = false) {
-		$trafficData = fetchTrafficData();
+    $app->get('/traffic(/:highway(/:segment(/:direction)))', function ($highway = null, $segment = null, $direction = null, $json = false) {
+        $trafficData = fetchTrafficData();
         $traffic = parseTrafficData($trafficData);
         $response = false;
 
@@ -31,6 +31,6 @@ $app->group('/v1', function () use ($app) {
 
         $response = json_encode($response);
         echo $response;
-	});
+    });
 });
 $app->run();
