@@ -14,19 +14,23 @@ $app->get('/', function () {
 
 // V1 route group
 $app->group('/v1', function () use ($app) {
-	$app->get('/traffic(/:highway(/:segment(/:direction)))', function ($highway = null, $segment = null, $direction = null) {
+	$app->get('/traffic(/:highway(/:segment(/:direction)))', function ($highway = null, $segment = null, $direction = null, $json = false) {
 		$trafficData = fetchTrafficData();
         $traffic = parseTrafficData($trafficData);
+        $response = false;
 
         if (!is_null($highway) && !is_null($segment) && !is_null($direction)) {
-            return $traffic[$highway][$segment][$direction];
+            $response = $traffic[$highway][$segment][$direction];
         } else if (!is_null($highway) && !is_null($segment)) {
-            return $traffic[$highway][$segment];
+            $response = $traffic[$highway][$segment];
         } else if (!is_null($highway)) {
-            return $traffic[$highway];
+            $response = $traffic[$highway];
         } else {
-            return $traffic;
+            $response = $traffic;
         }
+
+        $response = json_encode($response);
+        echo $response;
 	});
 });
 $app->run();
