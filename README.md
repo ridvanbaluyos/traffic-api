@@ -9,15 +9,19 @@ curl http://api.mmda.local/v1/traffic/:HIGHWAY/:SEGMENT/:DIRECTION
 
 ### Sample
 ```
-curl http://api.mmda.local/v1/traffic/EDSA
+curl http://mmda.ewoklabs.net/v1/traffic
 ```
 
 ```
-curl http://api.mmda.local/v1/traffic/C5/BAGONG_ILOG
+curl http://mmda.ewoklabs.net/v1/traffic/EDSA
 ```
 
 ```
-curl http://api.mmda.local/v1/traffic/C5/BAGONG_ILOG/NB
+curl http://mmda.ewoklabs.net/v1/traffic/C5/BAGONG_ILOG
+```
+
+```
+curl http://mmda.ewoklabs.net/v1/traffic/C5/BAGONG_ILOG/NB
 ```
 
 ___
