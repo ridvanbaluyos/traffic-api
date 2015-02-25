@@ -1,6 +1,6 @@
 <?php
-require 'vendor/autoload.php';
-require 'mmda.php';
+require_once __DIR__ . '/vendor/autoload.php';
+use Ridvanbaluyos\Mmda\MMDA as MMDA;
 
 $app = new \Slim\Slim(
     array(
@@ -15,8 +15,8 @@ $app->get('/', function () {
 // V1 route group
 $app->group('/v1', function () use ($app) {
     $app->get('/traffic(/:highway(/:segment(/:direction)))', function ($highway = null, $segment = null, $direction = null, $json = false) {
-        $trafficData = fetchTrafficData();
-        $traffic = parseTrafficData($trafficData);
+        $mmda = new MMDA();
+        $traffic = $mmda->traffic();
         $response = false;
 
         if (!is_null($highway) && !is_null($segment) && !is_null($direction)) {
