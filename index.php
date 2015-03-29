@@ -4,7 +4,7 @@ use Ridvanbaluyos\Mmda\MMDA as MMDA;
 
 $app = new \Slim\Slim(
     array(
-        'debug' => false,
+        'debug' => true,
     )
 );
 
@@ -39,10 +39,16 @@ $app->group('/v1', function () use ($app) {
 
         // Response
         if (!$response) {
-            echo '{"status":"NOT_ACCEPTABLE", "code":"406"}';
+            header("Content-Type: application/json");
+            echo json_encode(array("status"=>"NOT_ACCEPTABLE", "code"=>"406"));
+            exit;
         } else {
+            header("Content-Type: application/json");
+            $response['status'] = 'SUCCESS';
+            $response['code'] = '200';
             $response = json_encode($response);
-            echo '{"status":"SUCCESS", "code":"200", "response" : ' . $response . '}';
+            echo $response;
+            exit;
         }
     });
 });
