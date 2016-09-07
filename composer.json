@@ -1,6 +1,18 @@
 {
-	"require": {
-		"slim/slim": "2.*",
+    "name": "ridvanbaluyos/mmda-api",
+    "description": "A standalone API middleware for the MMDA API",
+    "keywords": "["api", "mmda", "traffic"]",
+    "homepage": "https://github.com/ridvanbaluyos/mmda-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ridvan Baluyos",
+            "email": "ridvan@baluyos.net",
+            "homepage": "https://ridvanbaluyos.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.0",
         "ridvanbaluyos/mmda": "v0.1"
-	}
+    }
 }

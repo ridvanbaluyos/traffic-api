@@ -4,28 +4,33 @@ This uses the MMDA API to fetch traffic data.
 ## Usage ##
 ### Fetching  Traffic Data
 ```
-curl http://mmda.ewoklabs.net/v1/traffic/:HIGHWAY/:SEGMENT/:DIRECTION
+curl https://chirpa.ewoklabs.net/mmda-api/v1/traffic/:HIGHWAY/:SEGMENT/:DIRECTION
 ```
 
 ### Sample
+All Data
 ```
-curl http://mmda.ewoklabs.net/v1/traffic
-```
-
-```
-curl http://mmda.ewoklabs.net/v1/traffic/EDSA
+curl https://chirpa.ewoklabs.net/mmda-api/v1/traffic
 ```
 
+Highway
 ```
-curl http://mmda.ewoklabs.net/v1/traffic/C5/BAGONG_ILOG
+curl https://chirpa.ewoklabs.net/mmda-api/v1/traffic/EDSA
 ```
 
+Segment
 ```
-curl http://mmda.ewoklabs.net/v1/traffic/C5/BAGONG_ILOG/NB
+curl https://chirpa.ewoklabs.net/mmda-api/v1/traffic/C5/BAGONG_ILOG
+```
+
+Direction
+```
+curl https://chirpa.ewoklabs.net/mmda-api/v1/traffic/C5/BAGONG_ILOG/NB
 ```
 
 ___
 Notes:
 - There is no error handling yet.
 - This is still in progress and the API calls might still change. Use at your own risk.
+
 
