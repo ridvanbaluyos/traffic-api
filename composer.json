@@ -1,7 +1,7 @@
 {
     "name": "ridvanbaluyos/mmda-api",
     "description": "A standalone API middleware for the MMDA API",
-    "keywords": "["api", "mmda", "traffic"]",
+    "keywords": ["api", "mmda", "traffic"],
     "homepage": "https://github.com/ridvanbaluyos/mmda-api",
     "license": "MIT",
     "authors": [
