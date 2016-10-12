@@ -7,12 +7,14 @@ use \Psr\Http\Message\ResponseInterface as Response;
 use \Ridvanbaluyos\Mmda\MMDA as MMDA;
 use \Gregwar\Cache\Cache;
 
-$dotenv = new Dotenv\Dotenv(__DIR__);
-$dotenv->load();
+if (file_exists(__DIR__ . DIRECTORY_SEPARATOR . '.env')) {
+    $dotenv = new Dotenv\Dotenv(__DIR__);
+    $dotenv->load();    
+} 
 
 $cache = null;
 // Set cache class depending on the value of CACHE_DRIVER
-if (getenv('CACHE_DRIVER') == 'file') {
+if (getenv('CACHE_DRIVER') == 'file' && file_exists(__DIR__ . DIRECTORY_SEPARATOR . 'cache')) {
     $cache = new Cache;
     $cache->setCacheDirectory('cache'); // This is the default
 }
@@ -34,10 +36,6 @@ $app->get('/test', function () {
 });
 $app->group('/v1', function() use ($cache) {
     $this->get('/traffic[/{highway}[/{segment}[/{direction}]]]', function ($request, $response, $args) use ($cache) {
-        $mmda = new MMDA();
-        $traffic = $mmda->traffic();
-        $response = false;
-
         $highway = (isset($args['highway'])) ? $args['highway'] : null;
         $segment = (isset($args['segment'])) ? $args['segment'] : null;
         $direction = (isset($args['direction'])) ? $args['direction'] : null;
@@ -54,6 +52,10 @@ $app->group('/v1', function() use ($cache) {
                 exit;
             }
         }   
+        
+        $mmda = new MMDA();
+        $traffic = $mmda->traffic();
+        $response = false;
     
         if (!is_null($highway) && !is_null($segment) && !is_null($direction)) {
             if (isset($traffic[$highway][$segment][$direction])) {
