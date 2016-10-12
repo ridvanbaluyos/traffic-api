@@ -27,6 +27,14 @@ Direction
 ```
 curl https://chirpa.ewoklabs.net/mmda-api/v1/traffic/C5/BAGONG_ILOG/NB
 ```
+### Enabling Cache
+1. Run `composer install`
+2. Create `cache` directory
+3. Create `.env` file and add:
+```
+CACHE_DRIVER=file
+```
+
 
 ___
 Notes:
