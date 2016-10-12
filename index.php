@@ -42,8 +42,13 @@ $app->group('/v1', function() use ($cache) {
 
         // If CACHE_DRIVER used is 'file' use GregWar/Cache library
         if (getenv('CACHE_DRIVER') && !is_null($cache)) {
+            $lifetime = getenv('CACHE_LIFETIME');
+            if (!$lifetime) {
+                $lifetime = 1800;
+            }
+
             $key = "{$highway}_{$segment}_{$direction}";
-            $cachedResponse = $cache->get($key);
+            $cachedResponse = $cache->get($key, ['max-age' => $lifetime]);
 
             if (unserialize($cachedResponse)) {
                 header("Content-Type: application/json");
@@ -82,8 +87,13 @@ $app->group('/v1', function() use ($cache) {
         } else {
             // If CACHE_DRIVER used is 'file' use GregWar/Cache library
             if (getenv('CACHE_DRIVER') && !is_null($cache)) {
+                $lifetime = getenv('CACHE_LIFETIME');
+                if (!$lifetime) {
+                    $lifetime = 1800;
+                }
+
                 $key = "{$highway}_{$segment}_{$direction}";
-                $cachedResponse = $cache->getOrCreate($key, [], function() use ($response) {
+                $cachedResponse = $cache->getOrCreate($key, ['max-age' => $lifetime], function() use ($response) {
                     return serialize($response);
                 });
             }
