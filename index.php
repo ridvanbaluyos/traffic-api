@@ -5,6 +5,17 @@ require 'vendor/autoload.php';
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use \Ridvanbaluyos\Mmda\MMDA as MMDA;
+use \Gregwar\Cache\Cache;
+
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$dotenv->load();
+
+$cache = null;
+// Set cache class depending on the value of CACHE_DRIVER
+if (getenv('CACHE_DRIVER') == 'file') {
+    $cache = new Cache;
+    $cache->setCacheDirectory('cache'); // This is the default
+}
 
 $app = new \Slim\App([
     'settings' => [
@@ -21,15 +32,28 @@ $app->get('/test', function () {
     header("Content-Type: application/json");
     echo '{"status":"SUCCESS", "code":"200", "response":"nothing here! :)"}';
 });
-$app->group('/v1', function() {
-    $this->get('/traffic[/{highway}[/{segment}[/{direction}]]]', function ($request, $response, $args) {
+$app->group('/v1', function() use ($cache) {
+    $this->get('/traffic[/{highway}[/{segment}[/{direction}]]]', function ($request, $response, $args) use ($cache) {
         $mmda = new MMDA();
         $traffic = $mmda->traffic();
         $response = false;
 
-        $highway = $args['highway'];
-        $segment = $args['segment'];
-        $direction = $args['direction'];
+        $highway = (isset($args['highway'])) ? $args['highway'] : null;
+        $segment = (isset($args['segment'])) ? $args['segment'] : null;
+        $direction = (isset($args['direction'])) ? $args['direction'] : null;
+
+        // If CACHE_DRIVER used is 'file' use GregWar/Cache library
+        if (getenv('CACHE_DRIVER') && !is_null($cache)) {
+            $key = "{$highway}_{$segment}_{$direction}";
+            $cachedResponse = $cache->get($key);
+
+            if (unserialize($cachedResponse)) {
+                header("Content-Type: application/json");
+                $response = json_encode(unserialize($cachedResponse));
+                echo $response;
+                exit;
+            }
+        }   
     
         if (!is_null($highway) && !is_null($segment) && !is_null($direction)) {
             if (isset($traffic[$highway][$segment][$direction])) {
@@ -54,6 +78,14 @@ $app->group('/v1', function() {
             echo json_encode(array("status"=>"NOT_ACCEPTABLE", "code"=>"406"));
             exit;
         } else {
+            // If CACHE_DRIVER used is 'file' use GregWar/Cache library
+            if (getenv('CACHE_DRIVER') && !is_null($cache)) {
+                $key = "{$highway}_{$segment}_{$direction}";
+                $cachedResponse = $cache->getOrCreate($key, [], function() use ($response) {
+                    return serialize($response);
+                });
+            }
+
             header("Content-Type: application/json");
             $response = json_encode($response);
             echo $response;
