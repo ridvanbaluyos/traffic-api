@@ -1,4 +1,5 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 require 'vendor/autoload.php';
 
@@ -82,10 +83,21 @@ $app->group('/v1', function() use ($cache) {
         } else {
             // If CACHE_DRIVER used is 'file' use GregWar/Cache library
             if (getenv('CACHE_DRIVER') && !is_null($cache)) {
-                $key = "{$highway}_{$segment}_{$direction}";
-                $cachedResponse = $cache->getOrCreate($key, [], function() use ($response) {
-                    return serialize($response);
-                });
+				$time = time();
+				$diff = 0;
+				
+				if(isset($_SESSION["cached_time"])){
+					$diff = $time - $_SESSION["cached_time"];
+				}
+				
+				if(!isset($_SESSION["cached_time"]) || $diff > (15 * 60)){
+					$key = "{$highway}_{$segment}_{$direction}";
+					$cache->getOrCreate($key, [], function() use ($response) {
+						return serialize($response);
+					});
+					
+					$_SESSION["cached_time"] = $time;
+				}
             }
 
             header("Content-Type: application/json");
