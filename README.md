@@ -1,4 +1,4 @@
-# mmda-api
+# mmda-api [ ![Codeship Status for ridvanbaluyos/mmda-api](https://app.codeship.com/projects/e1da0740-7807-0134-2318-0e37a99201a3/status?branch=master)](https://app.codeship.com/projects/180084)
 This uses the MMDA API to fetch traffic data.
 
 ## Usage ##
