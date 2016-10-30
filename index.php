@@ -1,5 +1,9 @@
 <?php
+
 error_reporting(E_ALL);
+
+// Initiate a session
+session_start();
 require 'vendor/autoload.php';
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
@@ -80,12 +84,18 @@ $app->group('/v1', function() use ($cache) {
             echo json_encode(array("status"=>"NOT_ACCEPTABLE", "code"=>"406"));
             exit;
         } else {
-            // If CACHE_DRIVER used is 'file' use GregWar/Cache library
-            if (getenv('CACHE_DRIVER') && !is_null($cache)) {
+            
+            // Find the time gap
+            $time_gap = (isset($_SESSION["cached_time"])) ? time() - $_SESSION["cached_time"] : 0;
+
+            // Is it less than 15 mins or the cached_time itself is not set !!! Do the trick
+            if( $time_gap > (15 * 60) OR !isset($_SESSION["cached_time"])){
                 $key = "{$highway}_{$segment}_{$direction}";
-                $cachedResponse = $cache->getOrCreate($key, [], function() use ($response) {
+                $cache->getOrCreate($key, [], function() use ($response) {
                     return serialize($response);
                 });
+                
+                $_SESSION["cached_time"] = $time;
             }
 
             header("Content-Type: application/json");
