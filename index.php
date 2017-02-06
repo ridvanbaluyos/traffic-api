@@ -46,8 +46,13 @@ $app->group('/v1', function() use ($cache) {
 
         // If CACHE_DRIVER used is 'file' use GregWar/Cache library
         if (getenv('CACHE_DRIVER') && !is_null($cache)) {
+            $conditionsArray = [];
+            if (getenv('CACHE_LIFETIME')) {
+                $conditionsArray = ['max-age' => getenv('CACHE_LIFETIME')];
+            }
+
             $key = "{$highway}_{$segment}_{$direction}";
-            $cachedResponse = $cache->get($key);
+            $cachedResponse = $cache->get($key, $conditionsArray);
 
             if (unserialize($cachedResponse)) {
                 header("Content-Type: application/json");
@@ -86,20 +91,18 @@ $app->group('/v1', function() use ($cache) {
         } else {
             // If CACHE_DRIVER used is 'file' use GregWar/Cache library
             if (getenv('CACHE_DRIVER') && !is_null($cache)) {
-				      $time = time();
-				      $diff = 0;
-				
-              if(isset($_SESSION["cached_time"])){
-                $diff = $time - $_SESSION["cached_time"];
-              }
-				
-				      if(!isset($_SESSION["cached_time"]) || $diff > (15 * 60)){
+
+                $conditionsArray = [];
+                if (getenv('CACHE_LIFETIME')) {
+                    $conditionsArray = ['max-age' => getenv('CACHE_LIFETIME')];
+                }
+
                 $key = "{$highway}_{$segment}_{$direction}";
-					      $cache->getOrCreate($key, [], function() use ($response) {
-						  return serialize($response);
-					  });
-					
-					  $_SESSION["cached_time"] = $time;
+                $cachedResponse = $cache->getOrCreate($key, $conditionsArray, function() use ($response) {
+                    return serialize($response);
+                });
+            }
+
             header("Content-Type: application/json");
             $response = json_encode($response);
             echo $response;

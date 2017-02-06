@@ -33,6 +33,7 @@ curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic/C5/BAGONG_ILOG/NB
 3. Create `.env` file and add:
 ```
 CACHE_DRIVER=file
+CACHE_LIFETIME=1800
 ```
 
 
