@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 error_reporting(E_ALL);
 
 // Initiate a session
@@ -84,20 +84,22 @@ $app->group('/v1', function() use ($cache) {
             echo json_encode(array("status"=>"NOT_ACCEPTABLE", "code"=>"406"));
             exit;
         } else {
-            
-            // Find the time gap
-            $time_gap = (isset($_SESSION["cached_time"])) ? time() - $_SESSION["cached_time"] : 0;
-
-            // Is it less than 15 mins or the cached_time itself is not set !!! Do the trick
-            if( $time_gap > (15 * 60) OR !isset($_SESSION["cached_time"])){
+            // If CACHE_DRIVER used is 'file' use GregWar/Cache library
+            if (getenv('CACHE_DRIVER') && !is_null($cache)) {
+				      $time = time();
+				      $diff = 0;
+				
+              if(isset($_SESSION["cached_time"])){
+                $diff = $time - $_SESSION["cached_time"];
+              }
+				
+				      if(!isset($_SESSION["cached_time"]) || $diff > (15 * 60)){
                 $key = "{$highway}_{$segment}_{$direction}";
-                $cache->getOrCreate($key, [], function() use ($response) {
-                    return serialize($response);
-                });
-                
-                $_SESSION["cached_time"] = $time;
-            }
-
+					      $cache->getOrCreate($key, [], function() use ($response) {
+						  return serialize($response);
+					  });
+					
+					  $_SESSION["cached_time"] = $time;
             header("Content-Type: application/json");
             $response = json_encode($response);
             echo $response;

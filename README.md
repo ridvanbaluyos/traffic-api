@@ -4,28 +4,28 @@ This uses the MMDA API to fetch traffic data.
 ## Usage ##
 ### Fetching  Traffic Data
 ```
-curl https://chirpa.ewoklabs.net/mmda-api/v1/traffic/:HIGHWAY/:SEGMENT/:DIRECTION
+curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic/:HIGHWAY/:SEGMENT/:DIRECTION
 ```
 
 ### Sample
 All Data
 ```
-curl https://chirpa.ewoklabs.net/mmda-api/v1/traffic
+curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic
 ```
 
 Highway
 ```
-curl https://chirpa.ewoklabs.net/mmda-api/v1/traffic/EDSA
+curl http://rx-78-2.gundamserver.com/mmda-api/v1/v1/traffic/EDSA
 ```
 
 Segment
 ```
-curl https://chirpa.ewoklabs.net/mmda-api/v1/traffic/C5/BAGONG_ILOG
+curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic/C5/BAGONG_ILOG
 ```
 
 Direction
 ```
-curl https://chirpa.ewoklabs.net/mmda-api/v1/traffic/C5/BAGONG_ILOG/NB
+curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic/C5/BAGONG_ILOG/NB
 ```
 ### Enabling Cache
 1. Run `composer install`
