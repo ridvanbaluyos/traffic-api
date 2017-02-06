@@ -1,5 +1,9 @@
 <?php
+session_start();
 error_reporting(E_ALL);
+
+// Initiate a session
+session_start();
 require 'vendor/autoload.php';
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
@@ -87,6 +91,7 @@ $app->group('/v1', function() use ($cache) {
         } else {
             // If CACHE_DRIVER used is 'file' use GregWar/Cache library
             if (getenv('CACHE_DRIVER') && !is_null($cache)) {
+
                 $conditionsArray = [];
                 if (getenv('CACHE_LIFETIME')) {
                     $conditionsArray = ['max-age' => getenv('CACHE_LIFETIME')];
