@@ -1,6 +1,9 @@
 <?php
 session_start();
 error_reporting(E_ALL);
+
+// Initiate a session
+session_start();
 require 'vendor/autoload.php';
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
@@ -83,23 +86,20 @@ $app->group('/v1', function() use ($cache) {
         } else {
             // If CACHE_DRIVER used is 'file' use GregWar/Cache library
             if (getenv('CACHE_DRIVER') && !is_null($cache)) {
-				$time = time();
-				$diff = 0;
+				      $time = time();
+				      $diff = 0;
 				
-				if(isset($_SESSION["cached_time"])){
-					$diff = $time - $_SESSION["cached_time"];
-				}
+              if(isset($_SESSION["cached_time"])){
+                $diff = $time - $_SESSION["cached_time"];
+              }
 				
-				if(!isset($_SESSION["cached_time"]) || $diff > (15 * 60)){
-					$key = "{$highway}_{$segment}_{$direction}";
-					$cache->getOrCreate($key, [], function() use ($response) {
-						return serialize($response);
-					});
+				      if(!isset($_SESSION["cached_time"]) || $diff > (15 * 60)){
+                $key = "{$highway}_{$segment}_{$direction}";
+					      $cache->getOrCreate($key, [], function() use ($response) {
+						  return serialize($response);
+					  });
 					
-					$_SESSION["cached_time"] = $time;
-				}
-            }
-
+					  $_SESSION["cached_time"] = $time;
             header("Content-Type: application/json");
             $response = json_encode($response);
             echo $response;
