@@ -4,28 +4,28 @@ This uses the MMDA API to fetch traffic data.
 ## Usage ##
 ### Fetching  Traffic Data
 ```
-curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic/:HIGHWAY/:SEGMENT/:DIRECTION
+curl http://developers.gundamserver.com/v1/traffic/:HIGHWAY/:SEGMENT/:DIRECTION
 ```
 
 ### Sample
 All Data
 ```
-curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic
+curl http://developers.gundamserver.com/v1/traffic
 ```
 
 Highway
 ```
-curl http://rx-78-2.gundamserver.com/mmda-api/v1/v1/traffic/EDSA
+curl http://developers.gundamserver.com/v1/traffic/EDSA
 ```
 
 Segment
 ```
-curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic/C5/BAGONG_ILOG
+curl http://developers.gundamserver.com/v1/traffic/C5/BAGONG_ILOG
 ```
 
 Direction
 ```
-curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic/C5/BAGONG_ILOG/NB
+curl http://developers.gundamserver.com/v1/traffic/C5/BAGONG_ILOG/NB
 ```
 ### Enabling Cache
 1. Run `composer install`
@@ -39,7 +39,6 @@ CACHE_LIFETIME=1800
 
 ___
 Notes:
-- There is no error handling yet.
-- This is still in progress and the API calls might still change. Use at your own risk.
-
+- This service is free for anyone to use as long as you don't abuse my server. I reserve the right to block any IP that hits this service too frequently and degrades the service for others. I make no guarantees about this service's availability, quality, or correctness.
+- If you need more reliable service, remember you can grab the code and data for this site here and host it yourself!
 
