@@ -1,0 +1,864 @@
+[
+  {
+    "id":1,
+    "name":"EDSA",
+    "title":"EDSA",
+    "segments":[
+      {
+        "id":11,
+        "name":"Balintawak",
+        "title":"",
+        "highway_id":1
+      },
+      {
+        "id":12,
+        "name":"Kaingin Road",
+        "highway_id":1
+      },
+      {
+        "id":13,
+        "name":"Mu\u00f1oz",
+        "highway_id":1
+      },
+      {
+        "id":14,
+        "name":"Bansalangin",
+        "highway_id":1
+      },
+      {
+        "id":15,
+        "name":"North Ave.",
+        "highway_id":1
+      },
+      {
+        "id":16,
+        "name":"Trinoma",
+        "highway_id":1
+      },
+      {
+        "id":17,
+        "name":"Quezon Ave.",
+        "highway_id":1
+      },
+      {
+        "id":18,
+        "name":"NIA Road",
+        "highway_id":1
+      },
+      {
+        "id":19,
+        "name":"Timog",
+        "highway_id":1
+      },
+      {
+        "id":20,
+        "name":"Kamuning",
+        "highway_id":1
+      },
+      {
+        "id":21,
+        "name":"New York - Nepa Q-Mart",
+        "highway_id":1
+      },
+      {
+        "id":22,
+        "name":"Monte De Piedad",
+        "highway_id":1
+      },
+      {
+        "id":23,
+        "name":"Aurora Blvd.",
+        "highway_id":1
+      },
+      {
+        "id":24,
+        "name":"Mc Arthur - Farmers",
+        "highway_id":1
+      },
+      {
+        "id":25,
+        "name":"P. Tuazon",
+        "highway_id":1
+      },
+      {
+        "id":26,
+        "name":"Main Ave.",
+        "highway_id":1
+      },
+      {
+        "id":27,
+        "name":"Santolan",
+        "highway_id":1
+      },
+      {
+        "id":28,
+        "name":"White Plains - Connecticut",
+        "highway_id":1
+      },
+      {
+        "id":29,
+        "name":"Ortigas Ave.",
+        "highway_id":1
+      },
+      {
+        "id":30,
+        "name":"SM Megamall",
+        "highway_id":1
+      },
+      {
+        "id":31,
+        "name":"Shaw Blvd.",
+        "highway_id":1
+      },
+      {
+        "id":32,
+        "name":"Reliance",
+        "highway_id":1
+      },
+      {
+        "id":33,
+        "name":"Pioneer - Boni",
+        "highway_id":1
+      },
+      {
+        "id":34,
+        "name":"Guadalupe",
+        "highway_id":1
+      },
+      {
+        "id":35,
+        "name":"Orense",
+        "highway_id":1
+      },
+      {
+        "id":36,
+        "name":"Kalayaan - Estrella",
+        "highway_id":1
+      },
+      {
+        "id":37,
+        "name":"Buendia",
+        "highway_id":1
+      },
+      {
+        "id":38,
+        "name":"Ayala Ave.",
+        "highway_id":1
+      },
+      {
+        "id":39,
+        "name":"Arnaiz - Pasay Road",
+        "highway_id":1
+      },
+      {
+        "id":40,
+        "name":"Magallanes",
+        "highway_id":1
+      },
+      {
+        "id":41,
+        "name":"Malibay",
+        "highway_id":1
+      },
+      {
+        "id":42,
+        "name":"Tramo",
+        "highway_id":1
+      },
+      {
+        "id":43,
+        "name":"Taft Ave.",
+        "highway_id":1
+      },
+      {
+        "id":44,
+        "name":"F.B. Harrison",
+        "highway_id":1
+      },
+      {
+        "id":45,
+        "name":"Roxas Boulevard",
+        "highway_id":1
+      },
+      {
+        "id":46,
+        "name":"Macapagal Ave.",
+        "highway_id":1
+      },
+      {
+        "id":47,
+        "name":"Mall of Asia",
+        "highway_id":1
+      }
+    ]
+  },
+  {
+    "id":2,
+    "name":"COMMONWEALTH",
+    "title":"Commonwealth",
+    "segments":[
+      {
+        "id":48,
+        "name":"Batasan",
+        "highway_id":2
+      },
+      {
+        "id":49,
+        "name":"St. Peter's Church",
+        "highway_id":2
+      },
+      {
+        "id":50,
+        "name":"Ever Gotesco",
+        "highway_id":2
+      },
+      {
+        "id":51,
+        "name":"Diliman Preparatory School",
+        "highway_id":2
+      },
+      {
+        "id":52,
+        "name":"Zuzuarregi",
+        "highway_id":2
+      },
+      {
+        "id":53,
+        "name":"General Malvar Hospital",
+        "highway_id":2
+      },
+      {
+        "id":54,
+        "name":"Tandang Sora Eastside",
+        "highway_id":2
+      },
+      {
+        "id":55,
+        "name":"Tandang Sora Westside",
+        "highway_id":2
+      },
+      {
+        "id":56,
+        "name":"Central Ave",
+        "highway_id":2
+      },
+      {
+        "id":57,
+        "name":"Magsaysay Ave",
+        "highway_id":2
+      },
+      {
+        "id":58,
+        "name":"University Ave",
+        "highway_id":2
+      },
+      {
+        "id":59,
+        "name":"Philcoa",
+        "highway_id":2
+      }
+    ]
+  },
+  {
+    "id":3,
+    "name":"QUEZON_AVE.",
+    "title":"Quezon Avenue",
+    "segments":[
+      {
+        "id":60,
+        "name":"Elliptical Road",
+        "highway_id":3
+      },
+      {
+        "id":61,
+        "name":"Agham Road",
+        "highway_id":3
+      },
+      {
+        "id":62,
+        "name":"Bantayog Road",
+        "highway_id":3
+      },
+      {
+        "id":63,
+        "name":"Edsa",
+        "highway_id":3
+      },
+      {
+        "id":64,
+        "name":"SGT. Esguera",
+        "highway_id":3
+      },
+      {
+        "id":65,
+        "name":"Scout Albano",
+        "highway_id":3
+      },
+      {
+        "id":66,
+        "name":"Scout Borromeo",
+        "highway_id":3
+      },
+      {
+        "id":67,
+        "name":"Scout Santiago",
+        "highway_id":3
+      },
+      {
+        "id":68,
+        "name":"Timog",
+        "highway_id":3
+      },
+      {
+        "id":69,
+        "name":"Scout Reyes",
+        "highway_id":3
+      },
+      {
+        "id":70,
+        "name":"Scout Magbanua",
+        "highway_id":3
+      },
+      {
+        "id":71,
+        "name":"Roces Avenue",
+        "highway_id":3
+      },
+      {
+        "id":72,
+        "name":"Roosevelt Avenue",
+        "highway_id":3
+      },
+      {
+        "id":73,
+        "name":"Dr. Garcia Sr.",
+        "highway_id":3
+      },
+      {
+        "id":74,
+        "name":"Scout Chuatoco",
+        "highway_id":3
+      },
+      {
+        "id":75,
+        "name":"G. Araneta Ave.",
+        "highway_id":3
+      },
+      {
+        "id":76,
+        "name":"Sto. Domingo",
+        "highway_id":3
+      },
+      {
+        "id":77,
+        "name":"Biak na Bato",
+        "highway_id":3
+      },
+      {
+        "id":78,
+        "name":"Banawe",
+        "highway_id":3
+      },
+      {
+        "id":79,
+        "name":"Cordillera",
+        "highway_id":3
+      },
+      {
+        "id":80,
+        "name":"D. Tuazon",
+        "highway_id":3
+      },
+      {
+        "id":81,
+        "name":"Speaker Perez",
+        "highway_id":3
+      },
+      {
+        "id":82,
+        "name":"Apo Avenue",
+        "highway_id":3
+      },
+      {
+        "id":83,
+        "name":"Kanlaon",
+        "highway_id":3
+      },
+      {
+        "id":84,
+        "name":"Mayon",
+        "highway_id":3
+      }
+    ]
+  },
+  {
+    "id":4,
+    "name":"ESPA\u00d1A",
+    "title":"Espana",
+    "segments":[
+      {
+        "id":85,
+        "name":"Welcome Rotunda",
+        "highway_id":4
+      },
+      {
+        "id":86,
+        "name":"Bluementritt",
+        "highway_id":4
+      },
+      {
+        "id":87,
+        "name":"A. Maceda",
+        "highway_id":4
+      },
+      {
+        "id":88,
+        "name":"Antipolo",
+        "highway_id":4
+      },
+      {
+        "id":89,
+        "name":"Vicente Cruz",
+        "highway_id":4
+      },
+      {
+        "id":90,
+        "name":"Gov. Forbes - Lacson",
+        "highway_id":4
+      },
+      {
+        "id":91,
+        "name":"P.Noval",
+        "highway_id":4
+      },
+      {
+        "id":92,
+        "name":"Lerma",
+        "highway_id":4
+      }
+    ]
+  },
+  {
+    "id":5,
+    "name":"C5",
+    "title":"C5",
+    "segments":[
+      {
+        "id":93,
+        "name":"Tandang Sora",
+        "highway_id":5
+      },
+      {
+        "id":94,
+        "name":"Capitol Hills",
+        "highway_id":5
+      },
+      {
+        "id":95,
+        "name":"University of the Philippines",
+        "highway_id":5
+      },
+      {
+        "id":96,
+        "name":"C.P. Garcia",
+        "highway_id":5
+      },
+      {
+        "id":97,
+        "name":"Miriam College",
+        "highway_id":5
+      },
+      {
+        "id":98,
+        "name":"Ateneo De Manila University",
+        "highway_id":5
+      },
+      {
+        "id":99,
+        "name":"Xavierville",
+        "highway_id":5
+      },
+      {
+        "id":100,
+        "name":"Aurora Boulevard",
+        "highway_id":5
+      },
+      {
+        "id":101,
+        "name":"P. Tuazon",
+        "highway_id":5
+      },
+      {
+        "id":102,
+        "name":"Bonny Serrano",
+        "highway_id":5
+      },
+      {
+        "id":103,
+        "name":"Libis Flyover",
+        "highway_id":5
+      },
+      {
+        "id":104,
+        "name":"Eastwood",
+        "highway_id":5
+      },
+      {
+        "id":105,
+        "name":"Green Meadows",
+        "highway_id":5
+      },
+      {
+        "id":106,
+        "name":"Ortigas Ave.",
+        "highway_id":5
+      },
+      {
+        "id":107,
+        "name":"J. Vargas",
+        "highway_id":5
+      },
+      {
+        "id":108,
+        "name":"Lanuza",
+        "highway_id":5
+      },
+      {
+        "id":109,
+        "name":"Bagong Ilog",
+        "highway_id":5
+      },
+      {
+        "id":110,
+        "name":"Kalayaan",
+        "highway_id":5
+      },
+      {
+        "id":111,
+        "name":"Market! Market!",
+        "highway_id":5
+      }
+    ]
+  },
+  {
+    "id":6,
+    "name":"ORTIGAS",
+    "title":"Ortigas",
+    "segments":[
+      {
+        "id":112,
+        "name":"Santolan",
+        "highway_id":6
+      },
+      {
+        "id":113,
+        "name":"Madison",
+        "highway_id":6
+      },
+      {
+        "id":114,
+        "name":"Roosevelt",
+        "highway_id":6
+      },
+      {
+        "id":115,
+        "name":"Club Filipino",
+        "highway_id":6
+      },
+      {
+        "id":116,
+        "name":"Wilson",
+        "highway_id":6
+      },
+      {
+        "id":117,
+        "name":"Connecticut",
+        "highway_id":6
+      },
+      {
+        "id":118,
+        "name":"La Salle Greenhills",
+        "highway_id":6
+      },
+      {
+        "id":119,
+        "name":"POEA",
+        "highway_id":6
+      },
+      {
+        "id":120,
+        "name":"EDSA Shrine",
+        "highway_id":6
+      },
+      {
+        "id":121,
+        "name":"San Miguel Ave",
+        "highway_id":6
+      },
+      {
+        "id":122,
+        "name":"Meralco Ave",
+        "highway_id":6
+      },
+      {
+        "id":123,
+        "name":"Medical City",
+        "highway_id":6
+      },
+      {
+        "id":124,
+        "name":"Lanuza Ave",
+        "highway_id":6
+      },
+      {
+        "id":125,
+        "name":"Greenmeadows Ave",
+        "highway_id":6
+      },
+      {
+        "id":126,
+        "name":"C5 Flyover",
+        "highway_id":6
+      }
+    ]
+  },
+  {
+    "id":7,
+    "name":"MARCOS HIGHWAY",
+    "title":"Marcos Highway",
+    "segments":[
+      {
+        "id":127,
+        "name":"SM City Marikina",
+        "highway_id":7
+      },
+      {
+        "id":128,
+        "name":"LRT-2 Station",
+        "highway_id":7
+      },
+      {
+        "id":129,
+        "name":"Dona Juana",
+        "highway_id":7
+      },
+      {
+        "id":130,
+        "name":"Amang Rodriguez",
+        "highway_id":7
+      },
+      {
+        "id":131,
+        "name":"F. Mariano Ave",
+        "highway_id":7
+      },
+      {
+        "id":132,
+        "name":"Robinson's Metro East",
+        "highway_id":7
+      },
+      {
+        "id":133,
+        "name":"San Benildo School",
+        "highway_id":7
+      }
+    ]
+  },
+  {
+    "id":8,
+    "name":"ROXAS BLVD.",
+    "title":"Roxas Boulevard",
+    "segments":[
+      {
+        "id":134,
+        "name":"Anda Circle",
+        "highway_id":8
+      },
+      {
+        "id":135,
+        "name":"Finance Road",
+        "highway_id":8
+      },
+      {
+        "id":136,
+        "name":"U.N. Avenue",
+        "highway_id":8
+      },
+      {
+        "id":137,
+        "name":"Pedro Gil",
+        "highway_id":8
+      },
+      {
+        "id":138,
+        "name":"Rajah Sulayman",
+        "highway_id":8
+      },
+      {
+        "id":139,
+        "name":"Quirino",
+        "highway_id":8
+      },
+      {
+        "id":140,
+        "name":"Pablo Ocampo",
+        "highway_id":8
+      },
+      {
+        "id":141,
+        "name":"Buendia",
+        "highway_id":8
+      },
+      {
+        "id":142,
+        "name":"Edsa Extension",
+        "highway_id":8
+      },
+      {
+        "id":143,
+        "name":"Baclaran",
+        "highway_id":8
+      },
+      {
+        "id":144,
+        "name":"Airport Road",
+        "highway_id":8
+      },
+      {
+        "id":145,
+        "name":"COASTAL_ROAD",
+        "title":"Coastal Road",
+        "highway_id":8
+      }
+    ]
+  },
+  {
+    "id":9,
+    "name":"SLEX",
+    "title":"SLEX",
+    "segments":[
+      {
+        "id":146,
+        "name":"Magallanes",
+        "highway_id":9
+      },
+      {
+        "id":147,
+        "name":"Nichols",
+        "highway_id":9
+      },
+      {
+        "id":148,
+        "name":"C5 On-ramp",
+        "highway_id":9
+      },
+      {
+        "id":149,
+        "name":"Merville Exit",
+        "highway_id":9
+      },
+      {
+        "id":150,
+        "name":"Bicutan Exit",
+        "highway_id":9
+      },
+      {
+        "id":151,
+        "name":"Sucat Exit",
+        "highway_id":9
+      },
+      {
+        "id":152,
+        "name":"Alabang Exit",
+        "highway_id":9
+      }
+    ]
+  },
+  {
+    "id":10,
+    "name":"NLEX",
+    "title":"NLEX",
+    "segments":[
+      {
+        "id":153,
+        "name":"Sta. Ines",
+        "highway_id":10
+      },
+      {
+        "id":154,
+        "name":"Dau",
+        "highway_id":10
+      },
+      {
+        "id":155,
+        "name":"Angeles",
+        "highway_id":10
+      },
+      {
+        "id":156,
+        "name":"Mexico",
+        "highway_id":10
+      },
+      {
+        "id":157,
+        "name":"San Fernando",
+        "highway_id":10
+      },
+      {
+        "id":158,
+        "name":"San Simon",
+        "highway_id":10
+      },
+      {
+        "id":159,
+        "name":"Pulilan",
+        "highway_id":10
+      },
+      {
+        "id":160,
+        "name":"Sta. Rita",
+        "highway_id":10
+      },
+      {
+        "id":161,
+        "name":"Balagtas",
+        "highway_id":10
+      },
+      {
+        "id":162,
+        "name":"Tabang",
+        "highway_id":10
+      },
+      {
+        "id":163,
+        "name":"Bocaue",
+        "highway_id":10
+      },
+      {
+        "id":164,
+        "name":"Marilao",
+        "highway_id":10
+      },
+      {
+        "id":165,
+        "name":"Meycauayan",
+        "highway_id":10
+      },
+      {
+        "id":166,
+        "name":"Valenzuela",
+        "highway_id":10
+      },
+      {
+        "id":167,
+        "name":"Mindanao Avenue",
+        "highway_id":10
+      },
+      {
+        "id":168,
+        "name":"Balintawak",
+        "highway_id":10
+      }
+    ]
+  }
+]

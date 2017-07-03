@@ -1,45 +1,47 @@
-# mmda-api [ ![Codeship Status for ridvanbaluyos/mmda-api](https://app.codeship.com/projects/e1da0740-7807-0134-2318-0e37a99201a3/status?branch=master)](https://app.codeship.com/projects/180084)
-This uses the MMDA API to fetch traffic data.
+
+This API gets the Traffic Data for Metro Manila.
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/98000faef03e4b419bda0dbc3bfef0bb)](https://www.codacy.com/app/ridvanbaluyos/traffic-api?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ridvanbaluyos/traffic-api&amp;utm_campaign=Badge_Grade)
 
 ## Usage ##
 ### Fetching  Traffic Data
 ```
-curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic/:HIGHWAY/:SEGMENT/:DIRECTION
+curl http://developers.gundamserver.com/v1/traffic?highway=<highway>&segment=<segment>&direction=<direction>
 ```
 
 ### Sample
 All Data
 ```
-curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic
+curl http://developers.gundamserver.com/v1/traffic
 ```
 
 Highway
 ```
-curl http://rx-78-2.gundamserver.com/mmda-api/v1/v1/traffic/EDSA
+curl http://developers.gundamserver.com/v1/traffic?highway=EDSA
 ```
 
 Segment
 ```
-curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic/C5/BAGONG_ILOG
+curl http://developers.gundamserver.com/v1/traffic?highway=C5&segment=BAGONG_ILOG
 ```
 
 Direction
 ```
-curl http://rx-78-2.gundamserver.com/mmda-api/v1/traffic/C5/BAGONG_ILOG/NB
-```
-### Enabling Cache
-1. Run `composer install`
-2. Create `cache` directory
-3. Create `.env` file and add:
-```
-CACHE_DRIVER=file
-CACHE_LIFETIME=1800
+curl http://developers.gundamserver.com/v1/traffic?highway=C5&segment=BAGONG_ILOG&direction=NB
 ```
 
+Getting highways
+```
+curl http://developers.gundamserver.com/v1/highways
+```
 
+Getting highway segments
+```
+curl http://developers.gundamserver.com/v1/segments?highway=EDSA
+```
 ___
-Notes:
-- There is no error handling yet.
-- This is still in progress and the API calls might still change. Use at your own risk.
 
+Notes:
+- This service is free for anyone to use as long as you don't abuse my server. I reserve the right to block any IP that hits this service too frequently and degrades the service for others. I make no guarantees about this service's availability, quality, or correctness.
+- If you need more reliable service, remember you can grab the code and data for this site here and host it yourself.
 
