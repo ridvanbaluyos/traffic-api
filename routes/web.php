@@ -22,7 +22,7 @@ $app->get('/test', function () use ($app) {
 
 // Version 1
 $app->group(['prefix' => 'v1'], function () use ($app) {
-    $app->get('traffic', 'v1\TrafficController@getTraffic');
+    $app->get('feed', 'v1\TrafficController@getTrafficFeed');
     $app->get('highways', 'v1\TrafficController@getHighways');
     $app->get('segments', 'v1\TrafficController@getSegments');
 });

@@ -12,7 +12,7 @@ class TrafficController extends Controller
     /**
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getTraffic(Request $request)
+    public function getTrafficFeed(Request $request)
     {
         $highway = $request->input('highway');
         $segment = $request->input('segment');
