@@ -12,32 +12,32 @@ curl http://developers.gundamserver.com/v1/traffic?highway=<highway>&segment=<se
 ### Sample
 All Data
 ```
-curl http://developers.gundamserver.com/v1/traffic
+curl http://developers.gundamserver.com/api/v1/traffic/feed
 ```
 
 Highway
 ```
-curl http://developers.gundamserver.com/v1/traffic?highway=EDSA
+curl http://developers.gundamserver.com/api/v1/traffic/feed?highway=EDSA
 ```
 
 Segment
 ```
-curl http://developers.gundamserver.com/v1/traffic?highway=C5&segment=BAGONG_ILOG
+curl http://developers.gundamserver.com/api/v1/traffic/feed?highway=C5&segment=BAGONG_ILOG
 ```
 
 Direction
 ```
-curl http://developers.gundamserver.com/v1/traffic?highway=C5&segment=BAGONG_ILOG&direction=NB
+curl http://developers.gundamserver.com/api/v1/traffic/feed?highway=C5&segment=BAGONG_ILOG&direction=NB
 ```
 
 Getting highways
 ```
-curl http://developers.gundamserver.com/v1/highways
+curl http://developers.gundamserver.com/api/v1/traffic/highways
 ```
 
 Getting highway segments
 ```
-curl http://developers.gundamserver.com/v1/segments?highway=EDSA
+curl http://developers.gundamserver.com/api/v1/traffic/segments?highway=EDSA
 ```
 ___
 
