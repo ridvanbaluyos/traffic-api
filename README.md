@@ -6,7 +6,7 @@ This API gets the Traffic Data for Metro Manila.
 ## Usage ##
 ### Fetching  Traffic Data
 ```
-curl http://developers.gundamserver.com/v1/traffic?highway=<highway>&segment=<segment>&direction=<direction>
+curl http://developers.gundamserver.com/api/v1/traffic/feed?highway=<highway>&segment=<segment>&direction=<direction>
 ```
 
 ### Sample
