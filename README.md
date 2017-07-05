@@ -41,7 +41,7 @@ curl http://developers.gundamserver.com/api/v1/traffic/segments?highway=EDSA
 ```
 ___
 
-Notes:
+### Notes:
 - This service is free for anyone to use as long as you don't abuse my server. I reserve the right to block any IP that hits this service too frequently and degrades the service for others. I make no guarantees about this service's availability, quality, or correctness.
 - If you need more reliable service, remember you can grab the code and data for this site here and host it yourself.
 
