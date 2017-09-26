@@ -1,6 +1,7 @@
 
 This API gets the Traffic Data for Metro Manila.
 
+[![Actively Maintained](https://maintained.tech/badge.svg)](https://maintained.tech/)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/98000faef03e4b419bda0dbc3bfef0bb)](https://www.codacy.com/app/ridvanbaluyos/traffic-api?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ridvanbaluyos/traffic-api&amp;utm_campaign=Badge_Grade)
 
 ## Usage ##
