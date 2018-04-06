@@ -1,0 +1,259 @@
+swagger: '2.0'
+info:
+  description: |
+    This API gets the Traffic Data for Metro Manila.
+  version: 1.0.0
+  title: Traffic API
+  termsOfService: https://github.com/ridvanbaluyos/traffic-api/blob/master/README.md#notes
+  contact:
+    name: Ridvan Baluyos
+    url: https://ridvanbaluyos.com
+    email: ridvan@baluyos.net
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+tags:
+- name: traffic
+  description: Metro Manila Traffic Feed
+- name: highways
+  description: Metro Manila Major Highways
+- name: segments
+  description: Metro Manila Segments of Major Highways
+host: traffic.gundamserver.com
+basePath: /v1
+schemes:
+- http
+
+paths:
+  /feed:
+    get:
+      tags:
+      - traffic
+      summary: Fetch Metro Manila Traffic Feed
+      operationId: getTrafficFeed
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: highway
+        description: The Highway name.
+        required: false
+        type: string
+        maximum: 16
+        minimum: 2
+      - in: query
+        name: segment
+        description: The Highway Segment Direction name.
+        required: false
+        type: string
+        maximum: 16
+        minimum: 2
+      - in: query
+        name: direction
+        description: The Highway Segment Direction name.
+        required: false
+        type: string
+        maximum: 2
+        minimum: 2
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/Traffic'
+        404:
+          description: API Not Found
+          schema:
+            $ref: '#/definitions/ApiNotFoundResponse'
+            
+  /highways:
+    get:
+      tags:
+      - highways
+      summary: Fetch Metro Manila Major Highways
+      operationId: getHighways
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/Highways'
+        404:
+          description: API Not Found
+          schema:
+            $ref: '#/definitions/ApiNotFoundResponse'
+  
+  /segments:
+    get:
+      tags:
+      - segments
+      summary: Fetch Metro Manila Major Highway Segments
+      operationId: getSegments
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: highway
+        in: query
+        description: The highway name.
+        required: true
+        type: string
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/Segments'
+        404:
+          description: API Not Found
+          schema:
+            $ref: '#/definitions/ApiNotFoundResponse'
+  
+definitions:
+  MetaData:
+    type: object
+    properties:
+      url:
+        type: string
+        example: http://traffic.gundamserver.com/v1/feed
+      title:
+        type: string
+        example: Metro Manila Traffic Data
+      source:
+        type: string
+        example: http://mmdatraffic.interaksyon.com/livefeed/
+      version:
+        type: string
+        example: 1
+      generated:
+        type: integer
+        example: 1499242888
+        
+  Traffic:
+    type: object
+    properties:
+      metadata:
+        $ref: '#/definitions/MetaData'
+      traffic:
+        type: object
+        properties:
+          <highway_name>:
+            $ref: '#/definitions/Highway'
+        
+  Highway:
+    type: object
+    properties:
+      name:
+        type: string
+        example: ROXAS_BLVD
+      label: 
+        type: string
+        example: Roxas Boulevard
+      segments:
+        $ref: '#/definitions/Segment'
+  
+  Highways:
+    type: array
+    items:
+      type: string
+    example: 
+      - EDSA
+      - COMMONWEALTH
+      - ROXAS_BLVD.
+      - MARCOS_HIGHWAY
+      - ORTIGAS
+      - C5
+      - QUEZON_AVE.
+      - ESPAÑA
+    
+  Segment:
+    type: object
+    properties:
+      name:
+        type: string
+        example: COASTAL_ROAD
+      label: 
+        type: string
+        example: Coastal Road
+      status:
+        $ref: '#/definitions/Status'
+ 
+  Segments:
+    type: array
+    items:
+      type: string
+    example:
+      - MALL_OF_ASIA
+      - MACAPAGAL_AVE.
+      - ROXAS_BOULEVARD
+      - F.B._HARRISON
+      - TAFT_AVE.
+      - TRAMO
+      - MALIBAY
+      - MAGALLANES
+      - ARNAIZ_-_PASAY_ROAD
+      - AYALA_AVE._SERVICE_ROAD
+      - AYALA_AVE.
+      - BUENDIA
+      - KALAYAAN_-_ESTRELLA
+      - ORENSE
+      - GUADALUPE
+      - PIONEER_-_BONI
+      - RELIANCE
+      - SHAW_BLVD._SERVICE_ROAD
+      - SHAW_BLVD.
+      - SM_MEGAMALL
+      - ORTIGAS_AVE._SERVICE_ROAD
+      - ORTIGAS_AVE.
+      - WHITE_PLAINS_-_CONNECTICUT
+      - SANTOLAN_SERVICE_ROAD
+      - SANTOLAN
+      - MAIN_AVE.
+      - P._TUAZON_SERVICE_ROAD
+      - P._TUAZON
+      - MC_ARTHUR_-_FARMERS_SERVICE_ROAD
+      - MC_ARTHUR_-_FARMERS
+      - AURORA_BLVD._SERVICE_ROAD
+      - AURORA_BLVD.
+      - MONTE_DE_PIEDAD
+      - NEW_YORK_-_NEPA_Q-MART
+      - KAMUNING_SERVICE_ROAD
+      - KAMUNING
+      - TIMOG_SERVICE_ROAD
+      - TIMOG
+      - NIA_ROAD
+      - QUEZON_AVE.
+      - TRINOMA
+      - NORTH_AVE.
+      - BANSALANGIN
+      - MUñOZ
+      - KAINGIN_ROAD
+      - BALINTAWAK
+      
+  Status:
+    type: object
+    properties:
+      name:
+        type: string
+        example: MH
+      label: 
+        type: string
+        example: Moderate to Heavy Traffic
+      last_updated:
+        type: string
+        example: Wed, 05 Jul 2017 15:50:59 +0800
+  
+  ApiNotFoundResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: no API found with those values
+        
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
