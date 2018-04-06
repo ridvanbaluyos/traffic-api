@@ -12,7 +12,8 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->version();
+    echo 'nothing here. :)';
+    exit;
 });
 
 $router->get('/test', function () use ($router) {
